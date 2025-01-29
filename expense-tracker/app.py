@@ -4,7 +4,7 @@ import sqlite3
 app = Flask(__name__)
 
 def init_db():
-    with sqlite3.connect('db/expenses.db') as conn:
+    with sqlite3.connect('expense-tracker/db/expenses.db') as conn:
         cursor = conn.cursor()
         cursor.execute('''CREATE TABLE IF NOT EXISTS expenses (
                             id INTEGER PRIMARY KEY,
