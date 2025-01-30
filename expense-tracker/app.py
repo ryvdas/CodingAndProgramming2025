@@ -31,7 +31,7 @@ def add_expense():
         amount = request.form['amount']
         description = request.form['description']
 
-        with sqlite3.connect('db/expenses.db') as conn:
+        with sqlite3.connect('expense-tracker/db/expenses.db') as conn:
             cursor = conn.cursor()
             cursor.execute("INSERT INTO expenses (date, category, amount, description) VALUES (?, ?, ?, ?)", 
                            (date, category, amount, description))
@@ -41,7 +41,7 @@ def add_expense():
 
 @app.route('/expenses')
 def view_expenses():
-    with sqlite3.connect('db/expenses.db') as conn:
+    with sqlite3.connect('expense-tracker/db/expenses.db') as conn:
         cursor = conn.cursor()
         cursor.execute("SELECT * FROM expenses")
         expenses = cursor.fetchall()
