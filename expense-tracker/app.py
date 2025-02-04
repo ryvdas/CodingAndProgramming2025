@@ -21,10 +21,6 @@ def init_db():
 def index():
     return render_template('index.html')
 
-if __name__ == '__main__':
-    init_db()
-    app.run(debug=True)
-
 @app.route('/add', methods=['POST'])
 def add_expense():
     if request.method == 'POST':
@@ -48,3 +44,7 @@ def view_expenses():
         cursor.execute("SELECT * FROM expenses")
         expenses = cursor.fetchall()
     return render_template('expenses.html', expenses=expenses)
+
+if __name__ == '__main__':
+    init_db()
+    app.run(debug=True)
