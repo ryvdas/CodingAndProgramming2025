@@ -1,9 +1,11 @@
 from flask import Flask, render_template, request, redirect, url_for
 import sqlite3
+import os
 
 app = Flask(__name__)
 
 def init_db():
+    os.makedirs('expense-tracker/db', exist_ok=True)  # Ensure the directory exists
     with sqlite3.connect('expense-tracker/db/expenses.db') as conn:
         cursor = conn.cursor()
         cursor.execute('''CREATE TABLE IF NOT EXISTS expenses (
