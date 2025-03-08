@@ -166,6 +166,10 @@ def summary():
     
     return render_template('summary.html', expenses_by_category=expenses_by_category, balance_over_time=balance_over_time)
 
+@app.route('/help')
+def help():
+    return render_template('help.html')
+
 if __name__ == '__main__':
     init_db()
     app.run(debug=True)

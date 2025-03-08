@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .back-link:hover {
+            background-color: #0056b3;
+        }
+        ul li {
+            margin-bottom: 10px; /* Add space between each line of text */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Help</h1>
+        <p>Welcome to the Expense Tracker Help page. Here you can find information on how to use the application.</p>
+        <ul>
+            <li><strong>Adding an Account:</strong> Use the form on the homepage to add a new account.</li>
+            <li><strong>Deleting an Account:</strong> Click the delete button next to an account to remove it.</li>
+            <li><strong>Adding a Transaction:</strong> Use the form on the homepage to add a new transaction.</li>
+            <li><strong>Viewing Transactions:</strong> Click on the "Transactions" link to view all transactions.</li>
+            <li><strong>Updating a Transaction:</strong> Click the update button next to a transaction to edit it.</li>
+            <li><strong>Deleting a Transaction:</strong> Click the delete button next to a transaction to remove it.</li>
+            <li><strong>Summary:</strong> Click on the "Summary" link to view a summary of your expenses and account balances.</li>
+        </ul>
+        <a href="{{ url_for('index') }}" class="back-link">Back to Home</a>
+    </div>
+</body>
+</html>
